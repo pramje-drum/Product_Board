@@ -13,7 +13,7 @@ export function middleware(request) {
 
 	// If token exists and trying to access login/signup
 	if (token && publicRoutes.includes(pathname)) {
-		return NextResponse.redirect(new URL("/", request.url));
+		return NextResponse.redirect(new URL("/dashboard", request.url));
 	}
 
 	return NextResponse.next();

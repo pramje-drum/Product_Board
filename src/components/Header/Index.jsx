@@ -49,12 +49,12 @@
 					{/* navigation */}
 					<nav className="flex flex-col gap-3 px-6 mt-6">
 						<Link
-							href="/"
+							href="/dashboard"
 							onClick={closeSidebar}
 							className="flex items-center gap-3 p-2 rounded-lg hover:bg-slate-800 transition"
 						>
 							<Home size={20} />
-							<span>Home</span>
+							<span>Dashboard</span>
 						</Link>
 
 						<Link

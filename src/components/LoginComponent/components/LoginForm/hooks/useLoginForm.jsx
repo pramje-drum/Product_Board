@@ -11,7 +11,7 @@ const useLoginForm = () => {
 
 			toast.success("Login successful 🎉");
 
-			router.push("/");
+			router.push("/dashboard");
 		} catch (error) {
 			toast.error(error.message); 
 		}
