@@ -1,28 +1,37 @@
 import { Dummy_Data_URL } from "@/constants/Index";
 
 export async function getAllProducts() {
-	const res = await fetch(Dummy_Data_URL, {
-		cache: "no-store",
-	});
+	try {
+		const res = await fetch(Dummy_Data_URL, {
+			cache: "no-store",
+		});
 
-	if (!res.ok) {
-		throw new Error("Failed to fetch products");
+		if (!res.ok) {
+			throw new Error("Failed to fetch products");
+		}
+
+		const data = await res.json();
+		return data;
+	} catch (error) {
+		console.error("Error in getAllProducts:", error.message);
+		throw error; 
 	}
-
-	const data = await res.json();
-	// console.log(data, "data");
-	return data;
 }
 
 export async function getProductById(id) {
-	const res = await fetch(`${Dummy_Data_URL}/${id}`, {
-		cache: "no-store",
-	});
+	try {
+		const res = await fetch(`${Dummy_Data_URL}/${id}`, {
+			cache: "no-store",
+		});
 
-	if (!res.ok) {
-		throw new Error("Failed to fetch product");
+		if (!res.ok) {
+			throw new Error("Failed to fetch product");
+		}
+
+		const data = await res.json();
+		return data;
+	} catch (error) {
+		console.error("Error in getProductById:", error.message);
+		throw error;
 	}
-
-	const data = await res.json();
-	return data;
-} 
+}

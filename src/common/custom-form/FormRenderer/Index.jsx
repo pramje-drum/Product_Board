@@ -19,7 +19,6 @@ export default function FormRenderer({ config, field, error }) {
 				error={error}
 				inputType={inputType}
 				field={field}
-				showPasswordToggle={showPasswordToggle}
 			/>
 		</div>
 	);

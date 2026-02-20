@@ -19,6 +19,7 @@ const ImageComp = ({ item, type }) => {
 					fill
 					className="object-scale-down"
 					sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 33vw"
+					priority
 				/>
 			)}
 		</div>
