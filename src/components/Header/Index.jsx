@@ -53,12 +53,12 @@ const Sidebar = () => {
 					</Link>
 
 					<Link
-						href="/about"
+						href="/products"
 						onClick={closeSidebar}
 						className="flex items-center gap-3 p-2 rounded-lg hover:bg-slate-800 transition"
 					>
 						<Info size={20} />
-						<span>About</span>
+						<span>Products</span>
 					</Link>
 
 					<Link

@@ -16,7 +16,7 @@ const DashboardPage = ({ filters }) => {
 				{!loading &&
 					filteredProducts.map((product) => (
 						<div key={product.id}>
-							<Link href={`dashboard/${product.id}`}>
+							<Link href={`products/${product.id}`}>
 								<ProductCard product={product} />
 							</Link>
 						</div>
