@@ -4,7 +4,6 @@ import { useMemo } from "react";
 import FormRenderer from "./FormRenderer/Index";
 
 export default function FormController({ config = [], onSubmit }) {
-	// 🔥 Generate default values dynamically
 	const defaultValues = useMemo(() => {
 		return config.reduce((acc, field) => {
 			acc[field.name] = field.defaultValue ?? "";
@@ -12,9 +11,14 @@ export default function FormController({ config = [], onSubmit }) {
 		}, {});
 	}, [config]);
 
-	const { control, handleSubmit } = useForm({
+	const {
+		control,
+		handleSubmit,
+		formState: { isLoading },
+	} = useForm({
 		defaultValues,
 	});
+	// console.log("isSubmitting:", isSubmitting);
 
 	return (
 		<form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-4">
@@ -36,9 +40,10 @@ export default function FormController({ config = [], onSubmit }) {
 
 			<button
 				type="submit"
+				disabled={isLoading}
 				className="bg-slate-900 text-white py-2 rounded-md mt-4"
 			>
-				Submit
+				{isLoading ? "Logging in..." : "Login"}
 			</button>
 		</form>
 	);

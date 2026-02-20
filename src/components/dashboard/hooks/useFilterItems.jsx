@@ -4,7 +4,7 @@ import useDebounce from "@/common/hooks/useDebounce";
 import { getAllProducts } from "@/services/productservice/useProduct";
 import { useEffect, useState } from "react";
 
-const useFilteredProducts = (filters) => {
+const useFilteredProducts = (filters = {}) => {
 	const [products, setProducts] = useState([]);
 	const [filteredProducts, setFilteredProducts] = useState([]);
 	const [loading, setLoading] = useState(true);
