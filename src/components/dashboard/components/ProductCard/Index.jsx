@@ -2,28 +2,40 @@ import ImageComp from "@/common/imageComp/Index";
 
 const ProductCard = ({ product }) => {
 	return (
-		<div className="bg-blue-200 border rounded-xl shadow-2xl overflow-hidden cursor-pointer transition-transform duration-300 hover:scale-105 flex  sm:flex-row w-full sm:w-[70%] md:w-full mx-auto">
-			<div className="w-1/2 h-40 md:h-auto relative">
-				<ImageComp item={product} type="dashboard" />
+		<div className="bg-[#1e1e2f] border border-gray-700 rounded-xl shadow-md hover:-translate-y-1 hover:shadow-cyan-500/20 transition-all duration-300 overflow-hidden flex flex-col w-full h-full group">
+			{/* Image Section - Fixed, compact height instead of a massive square */}
+			<div className="w-full h-28 sm:h-32 bg-[#13131f] relative flex items-center justify-center p-2">
+				<div className="transition-transform duration-500  w-full h-full relative">
+					<ImageComp item={product} type="dashboard" />
+				</div>
 			</div>
 
-			<div className="p-4 w-1/2 flex-1 flex flex-col justify-between">
-				<h2 className="text-md font-bold text-gray-900 truncate md:text-sm">
+			{/* Content Section - Tighter padding (p-3 instead of p-5) */}
+			<div className="p-3 flex flex-col flex-grow bg-gradient-to-b from-[#1e1e2f] to-[#151522]">
+				{/* Category - Scaled down to 10px */}
+				<p className="text-[10px] font-bold text-cyan-400 uppercase tracking-wider mb-1">
+					{product?.category || "Category"}
+				</p>
+
+				{/* Title - Smaller text (text-sm) and tighter line-height */}
+				<h2 className="text-sm font-medium text-gray-100 line-clamp-2 leading-tight mb-2">
 					{product?.title || "Untitled Product"}
 				</h2>
 
-				<p className="text-sm text-gray-600 capitalize mt-1 md:text-base">
-					{product?.category || "Unknown Category"}
-				</p>
-
-				<div className="flex flex-col sm:flex-row sm:justify-between sm:items-center mt-3 gap-2">
-					<span className="text-md font-semibold text-green-700 md:text-lg">
+				{/* Footer - Reduced top padding and border spacing */}
+				<div className="flex items-center justify-between mt-auto pt-2 border-t border-gray-700/50">
+					{/* Price - Scaled down to text-base */}
+					<span className="text-base font-black text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-emerald-500">
 						${product?.price ?? "N/A"}
 					</span>
+
+					{/* Stock Badge - Micro badge styling */}
 					<span
-						className={`text-sm font-medium ${
-							product?.stock > 0 ? "text-blue-600" : "text-red-600"
-						} md:text-base`}
+						className={`text-[9px] font-bold px-2 py-0.5 rounded border uppercase ${
+							product?.stock > 0
+								? "bg-green-500/10 text-green-400 border-green-500/30"
+								: "bg-red-500/10 text-red-400 border-red-500/30"
+						}`}
 					>
 						{product?.stock > 0 ? "In Stock" : "Out of Stock"}
 					</span>

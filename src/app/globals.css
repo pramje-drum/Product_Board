@@ -2,3 +2,27 @@
 * {
 	box-sizing: border-box;
 }
+
+.no-scrollbar::-webkit-scrollbar {
+	display: none;
+}
+@theme {
+	--font-ChewyFamily: "Chewy", sans-serif;
+	--font-Gothic: "Special Gothic Condensed One", sans-serif;
+
+	--color-bg_color: #200b33;
+	--color-input_bg: #2c0e48;
+	--color-focus_color: #e4a02d;
+	--color-task_container_color: #371650;
+	--color-task_container_title_bg: #430357;
+	--color-task_border_color: #73167596;
+
+	--color-pinkcustom: #fec5e5; /* tumhara custom color */
+
+	--background-image-task-bg: radial-gradient(
+		169.23% 169.23% at 41.47% -28.17%,
+		#461446 0%,
+		#2c063f 55.66%,
+		#a419a7 100%
+	);
+}

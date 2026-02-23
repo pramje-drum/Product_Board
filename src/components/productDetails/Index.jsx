@@ -51,9 +51,9 @@ const ProductDetailsPage = ({ id }) => {
 					</div>
 					<div>
 						<Link
-							href="/dashboard"
+							href="/products"
 							className="inline-block px-5 py-2 bg-cyan-500 text-white font-semibold rounded-lg shadow-md hover:bg-cyan-600 transition"
-						>
+						>	
 							← Back
 						</Link>
 					</div>
