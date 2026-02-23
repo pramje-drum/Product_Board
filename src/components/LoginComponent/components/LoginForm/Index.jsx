@@ -3,7 +3,7 @@
 import FormController from "@/common/custom-form/Index";
 import Link from "next/link";
 import { LOGIN_CONFIG } from "../../constants/Index";
-import useLoginForm from "./hooks/useLoginForm";
+import useLoginForm from "../../hooks/useLoginForm";
 
 const LoginForm = () => {
 	const { handleLogin } = useLoginForm();

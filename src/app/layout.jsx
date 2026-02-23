@@ -3,7 +3,7 @@ import "./globals.css";
 export default function RootLayout({ children }) {
 	return (
 		<html lang="en">
-			<body>
+			<body className="no-scrollbar">
 				<ToastContainer position="top-right" autoClose={3000} />
 				{children}
 			</body>

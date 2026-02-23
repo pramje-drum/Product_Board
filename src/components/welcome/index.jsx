@@ -4,7 +4,7 @@ import Link from "next/link";
 
 const WelcomePage = () => {
 	return (
-		<div className="w-full h-full bg-gradient-to-br from-white to-slate-200 flex flex-col items-center justify-center relative overflow-hidden">
+		<div className="w-full h-full bg-linear-to-br from-white to-slate-200 flex flex-col items-center justify-center relative overflow-hidden">
 			<div className="absolute -top-20 -left-20 w-60 h-60 bg-slate-600 opacity-20 rounded-full animate-pulse"></div>
 			<div className="absolute -bottom-20 -right-20 w-72 h-72 bg-slate-500 opacity-15 rounded-full animate-pulse"></div>
 			

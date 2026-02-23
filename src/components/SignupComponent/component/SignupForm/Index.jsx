@@ -6,7 +6,7 @@ import { SIGNUP_CONFIG } from "../../constants/Index";
 import { toast } from "react-toastify";
 import { loginUser, signupUser } from "@/services/authservice/useAuthForm";
 import { useRouter } from "next/navigation";
-import useSignupForm from "./hooks/useSignupForm";
+import useSignupForm from "../../hooks/useSignupForm";
 
 const SignupForm = () => {
 	const { handleSignup } = useSignupForm();
